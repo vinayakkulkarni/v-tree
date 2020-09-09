@@ -1,31 +1,24 @@
 # TreeView for Vue.js
 
-[![GitHub stars](https://img.shields.io/github/stars/ll931217/vue-treeview.svg?style=for-the-badge)](https://github.com/ll931217/vue-treeview/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/ll931217/vue-treeview.svg?style=for-the-badge)](https://github.com/ll931217/vue-treeview/issues)
-[![GitHub forks](https://img.shields.io/github/forks/ll931217/vue-treeview.svg?style=for-the-badge)](https://github.com/ll931217/vue-treeview/network)
-[![NPM Weekly Downloads](https://img.shields.io/npm/dw/@ll931217/vue-treeview.svg?style=for-the-badge)](https://nodei.co/npm/@ll931217/vue-treeview/)
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://nodei.co/npm/@ll931217/vue-treeview/)
-[![Version](https://img.shields.io/npm/v/@ll931217/vue-treeview.svg?style=for-the-badge)](https://nodei.co/npm/@ll931217/vue-treeview/)
-
 ![Vue-TreeView](assets/preview.png)
 
 ## Usage
 
 Install the package into your project:
 
-    npm install --save @ll931217/vue-treeview
+    npm install --save v-tree
 
 or
 
-    yarn add @ll931217/vue-treeview
+    yarn add v-tree
 
 Add this to your `main.js` file:
 
 ```javascript
 import Vue from 'vue'
-import TreeView from '@ll931217/vue-treeview'
+import Tree from 'v-tree'
 
-Vue.use(TreeView)
+Vue.use(Tree)
 ```
 
 Then add this to where you want to use the treeview:
@@ -157,7 +150,7 @@ First download their packages (Solid icons are already available):
 ```vue
 <template>
   <div id="app">
-    <treeview :tree="tree" :icons="icons" />
+    <tree :tree="data" :icons="icons" />
   </div>
 </template>
 
@@ -170,7 +163,7 @@ export default {
   name: 'App',
   data () {
     return {
-      tree: Tree,
+      data: Tree,
       icons: {
         closed: 'angle-up',
         opened: 'angle-down',
@@ -218,7 +211,7 @@ showParentIcon: {
 ## Draggable
 
 ```html
-<treeview :tree.sync="tree" :editable="true" :draggable="true" />
+<tree :tree.sync="tree" :editable="true" :draggable="true" />
 ```
 
 ## Tips
@@ -226,17 +219,17 @@ showParentIcon: {
 Adding `.sync` to `:tree` would allow two-way binding for the tree data, if data changed in the child component it will be updated for the entire tree, this feature is good for if you want to save the tree if it changed:
 
 ```html
-<treeview :tree.sync="tree" />
+<tree :tree.sync="tree" />
 ```
 
 Double-click the parent node will allow you to add new node to the tree, only if `editable` prop is passed with the `boolean` value of `true`:
 
 ```html
-<treeview :tree.sync="tree" :editable="true" />
+<tree :tree.sync="tree" :editable="true" />
 ```
 
 This `prop` can be used for checking user accounts:
 
 ```html
-<treeview :tree.sync="tree" :editable="userAccount === 'ADMIN'" />
+<tree :tree.sync="tree" :editable="userAccount === 'ADMIN'" />
 ```
