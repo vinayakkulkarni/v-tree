@@ -35,7 +35,7 @@
     "release": "shipjs prepare"
   },
   "dependencies": {
-    "@vue/composition-api": "^1.0.0-beta.13"
+    "@vue/composition-api": "^1.0.0-beta.14"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
