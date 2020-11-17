@@ -1,7 +1,26 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
+import alias from '@rollup/plugin-alias';
+import resolve from '@rollup/plugin-node-resolve';
 import vue from 'rollup-plugin-vue';
+import typescript from 'rollup-plugin-typescript2';
 
+const extensions = ['.js', '.ts', '.vue'];
+
+const plugins = [
+  alias(),
+  resolve({ extensions, browser: true }),
+  babel({
+    babelHelpers: 'bundled',
+    exclude: 'node_modules/**',
+  }),
+  commonjs(),
+  vue({ isWebComponent: true, template: { isProduction: true } }),
+  typescript({
+    include: [/\.tsx?$/, /\.vue\?.*?lang=ts/],
+    useTsconfigDeclarationDir: true,
+  }),
+];
 export default [
   // ESM build to be used with webpack/rollup.
   {
@@ -11,13 +30,7 @@ export default [
       name: 'v-tree',
       file: 'dist/v-tree.esm.js',
     },
-    plugins: [
-      babel({
-        exclude: 'node_modules/**',
-      }),
-      commonjs(),
-      vue(),
-    ],
+    plugins,
     external: ['@vue/composition-api'],
   },
   // CommonJS build
@@ -28,13 +41,7 @@ export default [
       name: 'v-tree',
       file: 'dist/v-tree.cjs.js',
     },
-    plugins: [
-      babel({
-        exclude: 'node_modules/**',
-      }),
-      commonjs(),
-      vue(),
-    ],
+    plugins,
     external: ['@vue/composition-api'],
   },
   // UMD build.
@@ -48,13 +55,7 @@ export default [
         '@vue/composition-api': 'vueCompositionApi',
       },
     },
-    plugins: [
-      babel({
-        exclude: 'node_modules/**',
-      }),
-      commonjs(),
-      vue(),
-    ],
+    plugins,
     external: ['@vue/composition-api'],
   },
 ];
