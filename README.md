@@ -6,17 +6,17 @@
 
 Install the package into your project:
 
-    npm install --save v-tree
+    npm install --save @vinayakkulkarni/v-tree
 
 or
 
-    yarn add v-tree
+    yarn add @vinayakkulkarni/v-tree
 
 Add this to your `main.js` file:
 
 ```javascript
 import Vue from 'vue'
-import Tree from 'v-tree'
+import Tree from '@vinayakkulkarni/v-tree'
 
 Vue.use(Tree)
 ```
