@@ -26,6 +26,7 @@ export default {
       exclude: 'node_modules/**',
     }),
     commonjs(),
+    terser(),
     vue({ isWebComponent: true, template: { isProduction: true } }),
     typescript({
       include: [/\.tsx?$/, /\.vue\?.*?lang=ts/],
