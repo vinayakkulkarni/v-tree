@@ -17,6 +17,7 @@ Add this to your `main.js` file:
 ```javascript
 import Vue from 'vue'
 import Tree from '@vinayakkulkarni/v-tree'
+import '@vinayakkulkarni/v-tree/dist/v-tree.css'
 
 Vue.use(Tree)
 ```
