@@ -1,3 +1,12 @@
+## [0.0.2](https://github.com/vinayakkulkarni/v-tree/compare/v0.0.1...v0.0.2) (2020-11-17)
+
+
+### Features
+
+* extract css to `dist` ([bc479f3](https://github.com/vinayakkulkarni/v-tree/commit/bc479f32334689807cb09cc14a2c562ae7126aa9))
+
+
+
 ## 0.0.1 (2020-11-17)
 
 
