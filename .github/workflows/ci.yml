@@ -37,5 +37,8 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm install
 
+      - name: Build the package 🪡
+        run: npm run build
+
       - name: Run linter 👀
         run: npm run lint
