@@ -1,6 +1,6 @@
 {
   "name": "@vinayakkulkarni/v-tree",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Simple tree component for your awesome Vue apps",
   "repository": {
     "type": "git",
