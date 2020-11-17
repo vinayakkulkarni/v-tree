@@ -4,6 +4,7 @@ import alias from '@rollup/plugin-alias';
 import resolve from '@rollup/plugin-node-resolve';
 import vue from 'rollup-plugin-vue';
 import typescript from 'rollup-plugin-typescript2';
+import scss from 'rollup-plugin-scss';
 
 const extensions = ['.js', '.ts', '.vue'];
 
@@ -15,7 +16,14 @@ const plugins = [
     exclude: 'node_modules/**',
   }),
   commonjs(),
-  vue({ isWebComponent: true, template: { isProduction: true } }),
+  vue({
+    css: false,
+    isWebComponent: true,
+    template: {
+      isProduction: true,
+    },
+  }),
+  scss({ output: 'dist/v-tree.css' }),
   typescript({
     include: [/\.tsx?$/, /\.vue\?.*?lang=ts/],
     useTsconfigDeclarationDir: true,
@@ -38,6 +46,7 @@ export default [
     input: 'src/index.js',
     output: {
       format: 'cjs',
+      exports: 'default',
       name: 'v-tree',
       file: 'dist/v-tree.cjs.js',
     },

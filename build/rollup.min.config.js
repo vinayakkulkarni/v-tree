@@ -5,6 +5,7 @@ import vue from 'rollup-plugin-vue';
 import alias from '@rollup/plugin-alias';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
+import scss from 'rollup-plugin-scss';
 
 const extensions = ['.js', '.ts', '.vue'];
 
@@ -27,7 +28,17 @@ export default {
     }),
     commonjs(),
     terser(),
-    vue({ isWebComponent: true, template: { isProduction: true } }),
+    vue({
+      css: false,
+      isWebComponent: true,
+      template: {
+        isProduction: true,
+      },
+    }),
+    scss({
+      output: 'dist/v-tree.min.css',
+      outputStyle: 'compressed',
+    }),
     typescript({
       include: [/\.tsx?$/, /\.vue\?.*?lang=ts/],
       useTsconfigDeclarationDir: true,
