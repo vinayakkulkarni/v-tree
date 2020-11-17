@@ -1,9 +1,9 @@
 <template>
-  <div id="vue-treeview">
+  <div id="v-treeview">
     <treeview
       v-for="(t, i) in tree"
       :key="i"
-      class="vue-treeview"
+      class="v-treeview"
       :text.sync="t.text"
       :nodes.sync="t.nodes"
       :type.sync="t.type"
@@ -19,9 +19,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+  import { defineComponent } from '@vue/composition-api';
   import branch from './branch.vue';
-  export default {
+
+  export default defineComponent({
     name: 'TreeView',
     components: {
       treeview: branch,
@@ -60,13 +62,13 @@
         }),
       },
     },
-  };
+  });
 </script>
 
 <style lang="sass">
   $border: 2px dashed #607d8b
 
-  #vue-treeview
+  #v-treeview
     background-color: #36404a
     padding: 20px
     border: none
@@ -80,7 +82,7 @@
       font-family: "Roboto Mono"
       font-weight: Bold
 
-      &.vue-treeview > li:before, &.vue-treeview > li:after
+      &.v-treeview > li:before, &.v-treeview > li:after
         display: none
 
       font-weight: bold
