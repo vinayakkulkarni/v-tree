@@ -26,7 +26,8 @@
     "@types/node"
   ],
   "include": [
-    "src",
+    "src", 
+    "shims-vue.d.ts",
   ],
   "exclude": [
     "dist",
