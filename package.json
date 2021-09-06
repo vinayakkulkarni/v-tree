@@ -51,7 +51,7 @@
     "@vinayakkulkarni/prettier-config-vue": "1.0.0",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^7.8.0",
     "husky": "^4.3.8",
     "prettier": "^2.2.1",
